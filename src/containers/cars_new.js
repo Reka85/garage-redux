@@ -24,6 +24,7 @@ class CarsNew extends Component {
     );
   }
 
+
   render(){
     return(
       <div>
@@ -33,24 +34,28 @@ class CarsNew extends Component {
             name="brand"
             type="text"
             component={this.renderField}
+            validate={[ required ]}
           />
           <Field
             label="Model"
             name="model"
             type="text"
             component={this.renderField}
+            validate={[ required ]}
           />
           <Field
             label="Owner"
             name="owner"
             type="text"
             component={this.renderField}
+            validate={[ required ]}
           />
           <Field
             label="Plate"
             name="plate"
             type="text"
             component={this.renderField}
+            validate={[ required ]}
           />
 
           <button className="btn btn-primary" type="submit"

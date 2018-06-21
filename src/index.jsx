@@ -15,6 +15,7 @@ import carsReducer from "./reducers/cars_reducer";
 //import containers
 import CarsIndex from "./containers/cars_index";
 import CarsNew from "./containers/cars_new";
+import CarsShow from "./containers/cars_show";
 
 //garage name
 const garageName = `garage${Math.floor(10 + (Math.random() * 90))}`;
@@ -40,6 +41,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/" exact component={CarsIndex} />
         <Route path="/new" component={CarsNew} />
+        <Route path="/cars/:id" component={CarsShow} />
       </Switch>
     </Router>
   </Provider>,
