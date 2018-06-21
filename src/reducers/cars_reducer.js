@@ -1,4 +1,4 @@
-import { FETCH_CARS } from "../actions/index";
+import { FETCH_CARS, ADD_CAR } from "../actions/index";
 
 export default function(state=[], action){
   switch(action.type){
