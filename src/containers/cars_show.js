@@ -1,23 +1,18 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchCar } from "../actions";
 import { deleteCar } from "../actions";
 
 class CarsShow extends Component {
-  handleClick = (id) => {
-    this.props.deleteCar(id, (car) => {
-      this.props.history.push("/");
-    });
+  handleClick = () => {
+    this.props.deleteCar(this.props.history, this.props.car);
   }
 
-  componentWillMount() {
-    if(!this.props.car){
-      this.props.fetchCar(this.props.match.params.id);
-    }
-  }
   render(){
+    if(!this.props.car){
+      return <p>Loading...</p>
+    }
     return(
       <div>
         <div>
@@ -31,7 +26,7 @@ class CarsShow extends Component {
           </Link>
         </div>
         <div>
-          <button onClick={this.handleClick}>Delete car</button>
+          <button className="delete-button" onClick={this.handleClick}>Delete car</button>
         </div>
       </div>
     );
@@ -40,12 +35,13 @@ class CarsShow extends Component {
 
 function mapStateToProps(reduxState, ownProps){
   const idFromUrl = parseInt(ownProps.match.params.id, 10);
-  const car = reduxState.cars.find(car => car.id === idFromUrl);
-  return { car };
+  return {
+    car: reduxState.cars.find((car) => car.id === idFromUrl),
+};
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchCar, deleteCar }, dispatch);
+  return bindActionCreators({ deleteCar }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CarsShow);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CarsShow));
