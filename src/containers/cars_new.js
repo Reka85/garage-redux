@@ -43,7 +43,9 @@ class CarsNew extends Component {
         <Bar garage={this.props.garage}/>
         <div className="container">
           <h2>Add a car to {this.props.garage} garage</h2>
-          <Link to="/">Back to cars</Link>
+          <Link to="/">
+            <button>Back to cars</button>
+          </Link>
           <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <Field
               label="Brand"
@@ -78,7 +80,7 @@ class CarsNew extends Component {
               placeholder="123ABC"
             />
 
-            <button className="btn btn-primary" type="submit"
+            <button type="submit"
               disabled={this.props.pristine || this.props.submitting}>
               Add Car
             </button>

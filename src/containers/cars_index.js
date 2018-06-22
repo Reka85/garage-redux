@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { Link } from "react-router-dom";
 import { fetchCars } from "../actions";
 import Bar from "../components/bar";
+import GarageDetails from "../components/garage_details";
 
 class CarsIndex extends Component {
   componentWillMount() {
@@ -29,16 +30,15 @@ class CarsIndex extends Component {
     <div>
       <Bar garage={this.props.garage}/>
       <div className="index-page container">
-        <div className="garage-details">
-          <div className="garage-photo">
+        <div className="row">
+          <div className="col-xs-12 col-sm-4">
+            <GarageDetails garage={this.props.garage} />
           </div>
-          <h2>{this.props.garage}</h2>
-          <Link className="btn btn-primary" to="/new">
-            Add new cars
-          </Link>
-        </div>
-        <div className="cars-list">
-          {this.renderCars()}
+          <div className="col-xs-12 col-sm-8">
+            <div className="cars-list">
+              {this.renderCars()}
+            </div>
+          </div>
         </div>
       </div>
     </div>

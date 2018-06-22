@@ -30,13 +30,13 @@ class CarsShow extends Component {
         <div className="container">
           <div>
             <h2>{this.props.car.brand} - {this.props.car.model}</h2>
+            <Link to="/">
+              <button>Back to cars</button>
+            </Link>
             <p>{this.props.car.owner}</p>
             <p>{this.props.car.plate}</p>
           </div>
           <div>
-            <Link to="/">
-              Back to all cars
-            </Link>
           </div>
           <div>
             <button className="delete-button" onClick={this.handleClick}>Delete car</button>
