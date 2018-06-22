@@ -33,6 +33,16 @@ export function addCar(body, callback){
   }
 }
 
+export function fetchCar(id){
+  const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
+    .then(response => response.json());
+
+  return {
+    type: FETCH_CAR,
+    payload: promise
+  }
+}
+
 // delete a car
 export function deleteCar(history, car){
   const request = fetch(`https://wagon-garage-api.herokuapp.com/cars/${car.id}`,{
