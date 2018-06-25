@@ -34,11 +34,13 @@ class CarsIndex extends Component {
           <div className="col-xs-12 col-sm-4">
             <GarageDetails garage={this.props.garage} />
           </div>
-          <div className="col-xs-12 col-sm-8">
-            <div className="cars-list">
-              {this.renderCars()}
+          { this.props.cars.length > 0 &&
+            <div className="col-xs-12 col-sm-8">
+              <div className="cars-list">
+                {this.renderCars()}
+              </div>
             </div>
-          </div>
+          }
         </div>
       </div>
     </div>
