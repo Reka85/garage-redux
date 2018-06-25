@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { deleteCar, fetchCar } from "../actions";
 import Bar from "../components/bar";
+import GarageDetails from "../components/garage_details";
 
 class CarsShow extends Component {
   componentWillMount(){
@@ -19,7 +20,7 @@ class CarsShow extends Component {
   render(){
     if(!this.props.car){
       return (
-        <div className="container">
+        <div className="container index-page">
           <p>Loading...</p>
         </div>
       )
@@ -27,19 +28,24 @@ class CarsShow extends Component {
     return(
       <div>
         <Bar garage={this.props.garage}/>
-        <div className="container">
-          <div>
-            <h2>{this.props.car.brand} - {this.props.car.model}</h2>
-            <Link to="/">
-              <button>Back to cars</button>
-            </Link>
-            <p>{this.props.car.owner}</p>
-            <p>{this.props.car.plate}</p>
-          </div>
-          <div>
-          </div>
-          <div>
-            <button className="delete-button" onClick={this.handleClick}>Delete car</button>
+        <div className="container index-page">
+          <div className="row">
+            <div className="col-xs-12 col-sm-4">
+              <GarageDetails garage={this.props.garage} />
+            </div>
+            <div className="col-xs-12 col-sm-8">
+              <div className="cars-show">
+                <h2>{this.props.car.brand} - {this.props.car.model}</h2>
+                <h4>Owner: {this.props.car.owner}</h4>
+                <h4>Plate number: <span className="plate">{this.props.car.plate}</span></h4>
+                <div className="buttons">
+                  <Link to="/">
+                    <button>Back to cars</button>
+                  </Link>
+                  <button className="delete-button" onClick={this.handleClick}>Delete car</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

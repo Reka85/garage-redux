@@ -17,7 +17,6 @@ export function fetchCars(){
   }
 }
 
-
 //add a car
 export function addCar(body, callback){
   const request = fetch(`https://wagon-garage-api.herokuapp.com/${API_VAR}/cars`, {
@@ -33,6 +32,7 @@ export function addCar(body, callback){
   }
 }
 
+//fetch one car
 export function fetchCar(id){
   const promise = fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
     .then(response => response.json());
