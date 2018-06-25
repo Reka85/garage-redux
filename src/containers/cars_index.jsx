@@ -16,9 +16,9 @@ class CarsIndex extends Component {
       return(
         <Link to={`cars/${car.id}`} key={car.id}>
           <div  className="car-item">
-            <p>{car.brand} - {car.model}</p>
+            <h4>{car.brand} - {car.model}</h4>
             <p>Owner: {car.owner}</p>
-            <p>Plate number: {car.plate}</p>
+            <p>Plate number: <span className="plate">{car.plate}</span></p>
           </div>
         </Link>
       );
