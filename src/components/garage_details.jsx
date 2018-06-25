@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class GarageDetails extends Component{
   shouldComponentUpdate(nextProps, nextState){
@@ -19,5 +20,9 @@ class GarageDetails extends Component{
     )
   }
 }
+
+GarageDetails.propTypes = {
+  garage: PropTypes.string.isRequired
+};
 
 export default GarageDetails;

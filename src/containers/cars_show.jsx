@@ -3,8 +3,9 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { deleteCar, fetchCar } from "../actions";
-import Bar from "../components/bar";
+import NavBar from "../components/nav_bar";
 import GarageDetails from "../components/garage_details";
+import PropTypes from "prop-types";
 
 class CarsShow extends Component {
   componentWillMount(){
@@ -27,7 +28,7 @@ class CarsShow extends Component {
     }
     return(
       <div>
-        <Bar garage={this.props.garage}/>
+        <NavBar garage={this.props.garage}/>
         <div className="container index-page">
           <div className="row">
             <div className="col-xs-12 col-sm-4">
@@ -63,6 +64,13 @@ function mapStateToProps(reduxState, ownProps){
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ fetchCar, deleteCar }, dispatch);
+}
+
+CarsShow.propTypes = {
+  garage: PropTypes.string.isRequired,
+  car: PropTypes.object,
+  fetchCar: PropTypes.func,
+  deleteCar: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarsShow);

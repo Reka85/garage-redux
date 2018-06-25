@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom";
 import { addCar } from "../actions";
-import Bar from "../components/bar";
+import NavBar from "../components/nav_bar";
+import PropTypes from "prop-types";
 
 class CarsNew extends Component {
   onSubmit = (values) => {
@@ -27,7 +28,6 @@ class CarsNew extends Component {
     );
   }
 
-
   render(){
     const required = (value) => {(value ? undefined : 'Required')}
 
@@ -36,7 +36,7 @@ class CarsNew extends Component {
     }
     return(
       <div>
-        <Bar garage={this.props.garage}/>
+        <NavBar garage={this.props.garage}/>
         <div className="container">
           <h2>Add a new car</h2>
           <div className="row">
@@ -92,6 +92,12 @@ function mapStateToProps(reduxState){
   return{
     garage: reduxState.garage
   };
+}
+
+CarsNew.PropTypes = {
+  addCar: PropTypes.func,
+  handleSubmit: PropTypes.func,
+  garage: PropTypes.string.isRequired
 }
 
 

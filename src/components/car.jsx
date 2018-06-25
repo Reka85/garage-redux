@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class Car extends Component {
   render(){
@@ -14,5 +15,12 @@ class Car extends Component {
     )
   }
 }
+
+Car.propTypes = {
+  brand: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  owner: PropTypes.string.isRequired,
+  plate: PropTypes.string.isRequired
+};
 
 export default Car;

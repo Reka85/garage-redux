@@ -1,7 +1,8 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-class Bar extends Component{
+class NavBar extends Component{
   shouldComponentUpdate(nextProps, nextState){
     return nextProps.garage !== this.props.garage;
   }
@@ -17,4 +18,8 @@ class Bar extends Component{
   }
 }
 
-export default Bar;
+NavBar.propTypes = {
+  garage: PropTypes.string.isRequired
+};
+
+export default NavBar;
