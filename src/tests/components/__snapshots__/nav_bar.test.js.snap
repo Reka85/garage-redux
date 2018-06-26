@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render NavBar correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavBar
+    garage="MyGarage"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <Link
+        replace={false}
+        to="/"
+      >
+        <i
+          className="fas fa-wrench"
+        />
+         
+        MyGarage
+      </Link>,
+      "className": "bar",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <i
+            className="fas fa-wrench"
+          />,
+          " ",
+          "MyGarage",
+        ],
+        "replace": false,
+        "to": "/",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "fas fa-wrench",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "i",
+        },
+        " ",
+        "MyGarage",
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Link
+          replace={false}
+          to="/"
+        >
+          <i
+            className="fas fa-wrench"
+          />
+           
+          MyGarage
+        </Link>,
+        "className": "bar",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": Array [
+            <i
+              className="fas fa-wrench"
+            />,
+            " ",
+            "MyGarage",
+          ],
+          "replace": false,
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "fas fa-wrench",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "i",
+          },
+          " ",
+          "MyGarage",
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
